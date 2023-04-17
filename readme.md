@@ -7,6 +7,18 @@ The website's front-end is built with React, a popular JavaScript library for bu
 
 The back-end of the website is powered by Node.js and Express, providing a robust and scalable server-side framework for handling various functionalities such as authentication, product management, and order processing. The website's data is stored in MongoDB, a flexible and scalable NoSQL database, allowing for efficient and seamless data retrieval and storage.
 
+## SCREENSHOTS
+
+## HOMEPAGE
+
+![image](https://drive.google.com/uc?export=view&id=144V3yQHGrovqMeRHrrwArAovlOrQoyqx)
+
+## CART PAGE
+
+![image](https://drive.google.com/uc?export=view&id=1GtB07k71gJWfYmk5QUMS5NKTYj2XmkeC)
+
+## STRIPE PAYMENT PAGE
+![image](https://drive.google.com/uc?export=view&id=11KrLOgf8OHktlsb8jnvuBpxVr_SDb4BR)
 
 ## Tech Stack
 

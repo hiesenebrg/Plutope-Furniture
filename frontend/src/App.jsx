@@ -14,8 +14,13 @@ const App = () => {
   return (
     <div>
     <Routes>
+    {user ? (
+        <Route path="/" element={<Home />} />
+      ) : (
+        <Route path="/" element={<Login />} />
+      )}
       
-      <Route exact path="/" element={<Home />} />
+      {/* <Route exact path="/" element={<Home />} /> */}
 
       <Route exact path="/products/:category" element={<ProductList />} />
 
@@ -29,6 +34,8 @@ const App = () => {
       ) : (
         <Route path="/login" element={<Login />} />
       )}
+
+      
 
       {user ? (
         <Route path="/register" element={<Home />} />

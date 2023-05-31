@@ -7,14 +7,17 @@ const jwt = require("jsonwebtoken");
 //REGISTER
 router.post("/register", async (req, res) => {
   try {
-  const newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-  });
+    // const newUser = new User({
+    //   username: req.body.username,
+    //   email: req.body.email,
+    //   password: req.body.password,
+    // });
+    const newUser = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
 
-  
-   
     res.status(201).json(newUser);
   } catch (err) {
     res.status(500).json(err);
@@ -50,10 +53,9 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({
       username: req.body.username,
     });
-    if(!user){
-       
-        return res.status(401).json("Wrong User Name");
-    }  
+    if (!user) {
+      return res.status(401).json("Wrong User Name");
+    }
     const hashedPassword = req.body.password;
     const passwordUser = await User.findOne({
       password: req.body.password,
@@ -64,10 +66,10 @@ router.post("/login", async (req, res) => {
         id: user._id,
         isAdmin: user.isAdmin,
       },
-     'plutope',
+      "plutope",
       { expiresIn: "3d" }
     );
-    
+
     const { password, ...others } = user._doc;
     res.status(200).json({ ...others, accessToken });
   } catch (err) {
